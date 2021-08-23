@@ -1,55 +1,43 @@
 <template>
   <div id="app">
-    <div id="tab-bar">
-      <div class="tab-bar-item">
-        <img src="./assets/img/tabbar/homepage.png" />
-        <div>首页</div></div>
-      <div class="tab-bar-item">
-        <img src="./assets/img/tabbar/category.png" />
-        <div>分类</div></div>
-      <div class="tab-bar-item">
-        <img src="./assets/img/tabbar/cart.png" />
-        <div>购物车</div></div>
-      <div class="tab-bar-item">
-        <img src="./assets/img/tabbar/my.png" />
-        <div>我的</div></div>
-    </div>
-
+    <router-view></router-view>
+    <tab-bar>
+      <tab-bar-item path="/homepage">
+        <img slot="item-img" src="@/assets/img/tabbar/homepage.png" />
+        <img slot="item-img-active" src="@/assets/img/tabbar/homepage-a.png" />
+        <div slot="item-text">首页</div>
+      </tab-bar-item>
+      <tab-bar-item path="/category">
+        <img slot="item-img" src="@/assets/img/tabbar/category.png" />
+        <img slot="item-img-active" src="@/assets/img/tabbar/category-a.png" />
+        <div slot="item-text">分类</div>
+      </tab-bar-item>
+      <tab-bar-item path="/cart">
+        <img slot="item-img" src="@/assets/img/tabbar/cart.png" />
+        <img slot="item-img-active" src="@/assets/img/tabbar/cart-a.png" />
+        <div slot="item-text">购物车</div>
+      </tab-bar-item>
+      <tab-bar-item path="/my">
+        <img slot="item-img" src="@/assets/img/tabbar/my.png" />
+        <img slot="item-img-active" src="@/assets/img/tabbar/my-a.png" />
+        <div slot="item-text">我的</div>
+      </tab-bar-item>
+    </tab-bar>
   </div>
 </template>
 
 <script>
-
+import TabBar from "./components/TabBar/TabBar";
+import TabBarItem from "./components/TabBar/TabBarItem";
 export default {
   name: 'App',
   components: {
-
+    TabBar,
+    TabBarItem
   }
 }
 </script>
 
 <style>
 @import './assets/css/base.css';
-#tab-bar{
-  height: 49px;
-  background-color: #f6f6f6;
-  display: flex;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-}
-.tab-bar-item{
-  flex: 1;
-  text-align: center;
-  font-size: 14px;
-}
-.tab-bar-item img{
-  width: 22px;
-  height: 22px;
-  margin: 3px;
-  vertical-align: middle;
-}
-
 </style>
