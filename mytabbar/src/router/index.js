@@ -10,7 +10,7 @@ Vue.use(VueRouter);
 const routes=[
   {
     path:'',
-    redirect:'@/views/homepage/homepage'
+    redirect:'/homepage'
   },
   {
     path:'/homepage',
